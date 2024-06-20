@@ -203,7 +203,7 @@ export const deleteAccount = () => async (dispatch) => {
 export const getAllProfile = () => async dispatch => {
   
   try {
-    const res = await axios.get('/api/profile'); // Changed to axios.get
+    const res = await axios.get('http://two.campusplacehub.com/api/profile'); // Changed to axios.get
 
     dispatch({
       type: GET_PROFILES,
