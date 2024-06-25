@@ -18,6 +18,10 @@ import AddExperience from './component/form-profile/AddExperience';
 import AddEducation from './component/form-profile/AddEducation';
 import Profile1 from './component/profiles/Profile1';
 import Profile from './component/profile/Profile';
+import Post from './component/post/Post';
+import  Post1 from './component/pos/Post1'
+
+
 const App = () => {
 
   useEffect(() => {
@@ -38,13 +42,16 @@ const App = () => {
             <Route path='/register' element={ <section className='container'><Register /></section>} />
             {/* <Route path='/dashboard' element={ <section className='container'><Dashboard /></section>} /> */}
             <Route element={<PrivateRoute />}>
+            
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/createProfile" element={<CreateProfile />} />
           <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/addExperience" element={<AddExperience />} />
           <Route path="/addEducation" element={<AddEducation />} />
           <Route path="/profile/:id" element={<section className='container'><Profile /></section>} />
-        
+          <Route path="/posts" element={<section className='container'><Post /></section>} />
+          <Route path="/posts/:id" element={<section className='container'><Post1 /></section>} />
+          {/* <Route path="/posts/:id" element={<section className="container"><Pos /></section>} /> */}
         </Route>
             {/* Add more routes here */}
           </Routes>

@@ -5,10 +5,13 @@ import alert from './alert';
 import auth from './auth';
 import profile from './profile'
 // Combine your reducers here
+import post from './post'
+
 export default combineReducers({
   example: exampleReducer,
   alert,
   auth,
   profile,
+  post,
   // Add other reducers here
 });

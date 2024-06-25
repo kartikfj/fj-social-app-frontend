@@ -19,13 +19,18 @@ export function Dashboard({deleteAccount, getCurrentProfile, auth:{user}, profil
     
     loading && profile === null ? <Spinner /> :<> 
     
-    <Fragment>Test
+    <Fragment>
+      <div className='container'>
+    <Link to="/createProfile" className="btn btn-light">
+            <i className="fas fa-user-circle text-primary"></i>CreateProfile
+          </Link>
+          </div>
 
     <p className="lead"></p>
     {profile !==null ? <Fragment>
       <section className="container">
       <h1 className="large text-primary">Dashboard</h1>
-      <p className="lead"><i className="fas fa-user"></i> Welcome  {user && user.name}</p>
+      {/* <p className="lead"><i className="fas fa-user"></i> Welcome  {user && user.name}</p> */}
 
       <div className="dash-buttons">
           <Link to="/createProfile" className="btn btn-light">
@@ -42,7 +47,10 @@ export function Dashboard({deleteAccount, getCurrentProfile, auth:{user}, profil
           </button>
         </div>
       </section>
-    </Fragment>:<Fragment>has not</Fragment>}
+    </Fragment>:<Fragment>    <div className="alert alert-info alert-dismissible fade show" role="alert">
+        Create Your Profile To Become A Community Developer
+        <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div></Fragment>}
     </Fragment>
     
     </>

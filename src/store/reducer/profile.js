@@ -1,4 +1,4 @@
-import { GET_PROFILE, GET_PROFILES, GET_REPOS, PROFILE_ERROR, UPDATE_PROFILE } from "../action/type";
+import { GET_PROFILE, GET_PROFILES, GET_REPOS, PROFILE_ERROR,DELETE_POST, UPDATE_PROFILE } from "../action/type";
 
 const initialState = {
   profile: null,
@@ -7,7 +7,7 @@ const initialState = {
   loading: true,
   error: {}
 };
-
+// eslint-disable-next-line
 export default function (state = initialState, action) {
   const { type, payload } = action;
 
@@ -29,7 +29,8 @@ export default function (state = initialState, action) {
       return {
         ...state,
         error: payload,
-        loading: false
+        loading: false,
+        profile: null,
       };
       case GET_REPOS:
         return {
@@ -37,6 +38,12 @@ export default function (state = initialState, action) {
            repos:payload,
            loading:false 
         }
+        case DELETE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter(post => post._id !== payload),
+        loading: false
+      };
     default:
       return state;
   }

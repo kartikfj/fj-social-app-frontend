@@ -4,6 +4,7 @@ import { setAlert } from './alert';
 // import Cookies from 'js-cookie';
 
 // Register User
+axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
 export const getCurrentProfile = () => async dispatch => {
   try {
@@ -203,7 +204,7 @@ export const deleteAccount = () => async (dispatch) => {
 export const getAllProfile = () => async dispatch => {
   
   try {
-    const res = await axios.get('http://two.campusplacehub.com/api/profile'); // Changed to axios.get
+    const res = await axios.get('https://two.campusplacehub.com/api/profile'); // Changed to axios.get
 
     dispatch({
       type: GET_PROFILES,

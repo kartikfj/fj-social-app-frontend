@@ -2,6 +2,7 @@ import axios from 'axios';
 import { REGISTER_SUCCESS, REGISTER_FAIL, USER_LOADED, AUTH_ERROR, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT } from './type';
 import { setAlert } from './alert';
 import Cookies from 'js-cookie';
+axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
 // Utility function to set token in headers
 const setAuthToken = token => {
